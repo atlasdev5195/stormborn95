@@ -1,0 +1,1049 @@
+/* =========================
+   ROOT VARIABLES (THEME)
+========================= */
+:root {
+
+  --bg-main: #0d1117;
+  --bg-panel: rgba(13,17,23,0.85);
+  --bg-header: rgba(13,17,23,0.95);
+
+  --accent-blue: #58a6ff;
+  --accent-purple: #bb8cf7;
+  --accent-green: #00ff99;
+
+  --text-main: #c9d1d9;
+  --text-dim: #8b949e;
+
+  --border-main: #58a6ff;
+
+  --glow-blue: 0 0 15px rgba(88,166,255,0.6);
+  --glow-purple: 0 0 15px rgba(187,140,247,0.6);
+  --glow-green: 0 0 15px rgba(0,255,153,0.6);
+
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+
+  height: 100%;
+  background: var(--bg-main);
+  color: var(--text-main);
+
+  font-family: 'Fira Code', monospace;
+
+  overflow-x: hidden;
+
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+header {
+
+  width: 100%;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  background: var(--bg-header);
+
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+
+  border-bottom: 1px solid rgba(88,166,255,0.2);
+
+}
+
+.navbar {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+
+}
+
+/* Logo */
+
+.logo {
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  color: var(--accent-blue);
+
+  text-shadow: var(--glow-blue);
+
+}
+
+/* Nav Links */
+
+.nav-links {
+
+  list-style: none;
+  display: flex;
+  gap: 30px;
+
+}
+
+.nav-links a {
+
+  text-decoration: none;
+
+  color: var(--accent-blue);
+
+  font-weight: bold;
+
+  position: relative;
+
+  transition: all 0.25s ease;
+
+}
+
+.nav-links a::after {
+
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: var(--accent-purple);
+
+  transition: width 0.25s ease;
+
+}
+
+.nav-links a:hover {
+
+  color: var(--accent-purple);
+  text-shadow: var(--glow-purple);
+
+}
+
+.nav-links a:hover::after {
+
+  width: 100%;
+
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+/* Lightning energy field background */
+
+.hero::before {
+
+  content: '';
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+
+    radial-gradient(circle at 15% 25%, rgba(88,166,255,0.25), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(187,140,247,0.2), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(88,166,255,0.08), transparent 60%);
+
+  animation: stormField 8s infinite linear;
+
+  z-index: -1;
+
+}
+
+@keyframes stormField {
+
+  0% { transform: translate(0px,0px); }
+
+  25% { transform: translate(-30px,20px); }
+
+  50% { transform: translate(20px,-25px); }
+
+  75% { transform: translate(-15px,-15px); }
+
+  100% { transform: translate(0px,0px); }
+
+}
+
+/* Hero Text */
+
+.hero-text h2 {
+
+  font-size: 3.2rem;
+
+  color: var(--accent-blue);
+
+  text-shadow: var(--glow-blue);
+
+  margin-bottom: 20px;
+
+}
+
+.hero-text p {
+
+  font-size: 1.2rem;
+
+  color: var(--text-dim);
+
+}
+
+/* =========================
+   CHARACTERS PAGE
+========================= */
+
+.characters-container {
+
+  padding:
+
+    120px 40px 40px 40px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 30px;
+
+}
+
+/* Character Card */
+
+.character-card {
+
+  background: var(--bg-panel);
+
+  border: 1px solid rgba(88,166,255,0.3);
+
+  border-radius: 12px;
+
+  width: 260px;
+
+  padding: 20px;
+
+  transition: all 0.3s ease;
+
+  backdrop-filter: blur(4px);
+
+}
+
+.character-card:hover {
+
+  transform: translateY(-6px);
+
+  border-color: var(--accent-purple);
+
+  box-shadow: var(--glow-purple);
+
+}
+
+/* Image */
+
+.character-card img {
+
+  width: 100%;
+
+  border-radius: 6px;
+
+  margin-bottom: 15px;
+
+}
+
+/* =========================
+   POWERS PAGE
+========================= */
+
+.powers-container {
+
+  padding: 120px 40px 40px 40px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 30px;
+
+}
+
+.power-card {
+
+  background: var(--bg-panel);
+
+  border: 1px solid rgba(88,166,255,0.3);
+
+  border-radius: 12px;
+
+  width: 300px;
+
+  padding: 20px;
+
+  transition: all 0.3s ease;
+
+}
+
+.power-card:hover {
+
+  transform: translateY(-6px);
+
+  border-color: var(--accent-purple);
+
+  box-shadow: var(--glow-purple);
+
+}
+
+/* =========================
+   UMBRA NET TERMINAL
+========================= */
+
+.terminal-container {
+
+  padding: 120px 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+}
+
+/* Terminal Window */
+
+.terminal {
+
+  width: 100%;
+  max-width: 950px;
+
+  background: #000;
+
+  border-radius: 10px;
+
+  border: 1px solid var(--accent-green);
+
+  box-shadow: var(--glow-green);
+
+  padding: 20px;
+
+  overflow-y: auto;
+
+  max-height: 70vh;
+
+}
+
+/* Password Box */
+
+#password-section input,
+#password-section button {
+
+  font-family: inherit;
+
+  background: black;
+
+  color: var(--accent-green);
+
+  border: 1px solid var(--accent-green);
+
+  padding: 10px;
+
+  border-radius: 6px;
+
+}
+
+#password-section button:hover {
+
+  background: var(--accent-green);
+  color: black;
+
+}
+
+/* Terminal text */
+
+.terminal {
+
+  color: var(--accent-green);
+
+  white-space: pre-wrap;
+
+  line-height: 1.6;
+
+}
+
+/* Cursor */
+
+.cursor {
+
+  display: inline-block;
+
+  width: 10px;
+
+  background: var(--accent-green);
+
+  animation: blink 1s infinite;
+
+}
+
+@keyframes blink {
+
+  50% { opacity: 0; }
+
+}
+
+/* =========================
+   SCROLLBAR STYLING
+========================= */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+
+  background: #000;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: var(--accent-blue);
+
+  border-radius: 4px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: var(--accent-purple);
+
+}
+
+/* Add this under your .character-card section */
+.character-card h3 {
+  color: var(--accent-blue);
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(88,166,255,0.2);
+  padding-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.character-card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.character-card strong {
+  color: var(--accent-purple); /* Makes the labels like 'Ability:' pop */
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  5% { opacity: 0.8; }
+  10% { opacity: 1; }
+  15% { opacity: 0.9; }
+  25% { opacity: 1; }
+}
+
+.character-card:hover {
+  animation: flicker 0.3s infinite; /* Subtle electrical flickering */
+  border-color: var(--accent-blue);
+  box-shadow: var(--glow-blue), inset 0 0 10px rgba(88,166,255,0.2);
+}
+
+.hero-text h2 {
+  /* Min size: 2rem, Scalable size: 8vw, Max size: 3.5rem */
+  font-size: clamp(2rem, 8vw, 3.5rem); 
+  padding: 0 20px;
+}
+
+/* Aisha's Medical Tablet Style */
+.med-body {
+    background: #0a0c10;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.med-tablet {
+    width: 100%;
+    max-width: 800px;
+    background: #f4f7f6; /* Off-white clinical look */
+    border-radius: 15px;
+    border: 8px solid #333;
+    color: #1a1a1a;
+    font-family: 'Fira Code', monospace;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(0, 255, 153, 0.3);
+}
+
+.tablet-header {
+    background: #333;
+    color: var(--accent-green);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tablet-header h1 { font-size: 1rem; margin: 0; }
+
+.med-content { padding: 30px; }
+
+.patient-banner {
+    background: #e8efed;
+    padding: 15px;
+    border-left: 5px solid var(--accent-green);
+    margin-bottom: 25px;
+}
+
+.log-entry h2 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+    margin-top: 30px;
+}
+
+.phenomenon-box {
+    background: rgba(0, 255, 153, 0.05);
+    border: 1px dashed var(--accent-green);
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.trigger-grid {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.trigger {
+    background: #ddd;
+    padding: 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.doctors-orders {
+    background: #ffeaea;
+    border: 1px solid #ffcccc;
+    padding: 15px;
+    margin-top: 30px;
+    color: #b71c1c;
+}
+
+/* Pulse Animation */
+.pulse {
+    fill: none;
+    stroke: var(--accent-green);
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear infinite;
+}
+
+@keyframes dash { to { stroke-dashoffset: 0; } }
+
+/* Lea's Specific Theme Overrides */
+.lea-theme {
+    box-shadow: 0 0 50px rgba(255, 105, 180, 0.3);
+}
+
+.pulse-pink {
+    fill: none;
+    stroke: #ff69b4;
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear infinite;
+}
+
+.lea-banner {
+    background: #fff0f5;
+    border-left: 5px solid #ff69b4;
+}
+
+.lea-box {
+    background: rgba(255, 105, 180, 0.05);
+    border: 1px dashed #ff69b4;
+}
+
+.lea-trig {
+    background: #ffe4e1;
+    border-bottom: 2px solid #ff69b4;
+}
+
+.lea-orders {
+    background: #fff5f8;
+    border: 1px solid #ffb6c1;
+    color: #c71585;
+}
+
+.return-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.return-link a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border: 1px solid #ff69b4;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.return-link a:hover {
+    background: #ff69b4;
+    color: white;
+}
+
+/* =========================
+   HACKED DIARY STYLES
+========================= */
+
+@import url('https://fonts.googleapis.com');
+
+.hacked-container {
+    background: #050505;
+    min-height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.diary-page {
+    background: #e0e0e0; /* Crumpled paper color */
+    color: #222;
+    width: 100%;
+    max-width: 800px;
+    padding: 60px;
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.1);
+    position: relative;
+    font-family: 'Georgia', serif; /* Iris's formal font */
+    border-radius: 2px;
+}
+
+/* Asa's Messy Handwriting */
+.asa-note {
+    font-family: 'Permanent Marker', cursive;
+    color: #0056b3; /* Ink Blue */
+    font-size: 1.2rem;
+    position: absolute;
+    width: 250px;
+    line-height: 1.2;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Specific Positions for the Notes */
+.note-1 { top: 15%; right: -50px; transform: rotate(5deg); color: #d90429; } /* Red for panic */
+.note-2 { top: 40%; left: -60px; transform: rotate(-8deg); color: #0056b3; }
+.note-3 { bottom: 10%; right: -40px; transform: rotate(3deg); color: #0056b3; }
+
+/* CJ's Shadow Comments */
+.cj-shadow-text {
+    font-family: 'Fira Code', monospace;
+    background: rgba(0, 0, 0, 0.85);
+    color: #888;
+    padding: 10px;
+    margin: 20px 0;
+    border-left: 3px solid #444;
+    font-size: 0.9rem;
+    transform: skewX(-5deg);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+}
+
+.iris-entry-header {
+    border-bottom: 2px solid #999;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   CLEAN HACKED DIARY THEME
+========================= */
+@import url('https://fonts.googleapis.com');
+
+.hacked-container {
+    background: #0a0b0d;
+    min-height: 100vh;
+    padding: 60px 20px;
+    font-family: 'Fira Code', monospace;
+}
+
+/* The Main Page Wrapper */
+.diary-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 300px; /* Iris on left, Asa on right */
+    gap: 40px;
+    position: relative;
+}
+
+/* Iris's Original Document */
+.iris-doc {
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+}
+
+/* Red "Hacked" Header */
+.breach-header {
+    background: #ff3333;
+    color: white;
+    padding: 5px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+}
+
+/* Asa's Sidebar Notes */
+.side-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.asa-sticky {
+    font-family: 'Permanent Marker', cursive;
+    background: #58a6ff; /* Asa's Tech Blue */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    transform: rotate(2deg);
+    font-size: 1rem;
+    border-bottom: 3px solid #0056b3;
+    position: relative;
+}
+
+/* CJ's Shadow Comments (Nested inside Asa's hack) */
+.cj-shadow {
+    background: #222;
+    color: #888;
+    padding: 10px;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    border-left: 3px solid #444;
+    font-family: 'Fira Code', monospace;
+}
+
+.highlight {
+    background: rgba(88, 166, 255, 0.2);
+    border-bottom: 2px solid #58a6ff;
+}
+
+/* CJ's Shadow Theme */
+.shadow-theme-bg {
+    background: #050505;
+}
+
+.shadow-theme {
+    background: #1a1a1a !important;
+    color: #a0a0a0 !important;
+    border: 8px solid #222 !important;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+}
+
+.shadow-header {
+    background: #000 !important;
+    color: #444 !important;
+    border-bottom: 2px solid #333;
+}
+
+.shadow-banner {
+    background: #0d0d0d !important;
+    border-left: 5px solid #444 !important;
+    color: #888;
+}
+
+.shadow-box {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px dashed #444 !important;
+}
+
+.data-stat {
+    background: #222;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-family: 'Fira Code', monospace;
+    color: #eee;
+}
+
+.warning-text {
+    color: #ff3333;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.shadow-trig {
+    background: #111 !important;
+    border-bottom: 2px solid #333 !important;
+    color: #777 !important;
+}
+
+.shadow-orders {
+    background: #0a0a0a !important;
+    border: 1px solid #222 !important;
+    color: #888 !important;
+}
+
+.pulse-shadow {
+    fill: none;
+    stroke: #333;
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 5s linear infinite;
+}
+
+.shadow-link-btn {
+    color: #555 !important;
+    border: 1px solid #333 !important;
+}
+
+.shadow-link-btn:hover {
+    background: #333 !important;
+    color: #fff !important;
+}
+
+/* THE NUCLEAR SCROLL FIX */
+html, body {
+    height: auto !important;      /* Allows page to grow with content */
+    min-height: 100vh;            /* Ensures background covers the screen */
+    overflow-y: auto !important;  /* Forces vertical scroll to be enabled */
+    overflow-x: hidden;           /* Prevents ugly side-scrolling */
+}
+
+/* Fix for the Medical Log Pages */
+.med-body {
+    display: block !important;    /* Standard block flow for scrolling */
+    padding: 40px 10px !important;
+}
+
+.med-tablet {
+    margin: 0 auto 50px auto !important; /* Centered with bottom breathing room */
+    height: auto !important;             /* Let it grow as long as Aisha's logs are */
+    overflow: visible !important;        /* Don't cut off the text! */
+}
+
+/* Fix for the Terminal Internal Scroll */
+.terminal-body {
+    max-height: 500px;            /* Keeps the terminal box a set size */
+    overflow-y: auto !important;  /* ...but lets you scroll inside it */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Terminal Window UI */
+.terminal-window {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--accent-green);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: var(--accent-green);
+  color: black;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.terminal-body {
+  padding: 20px;
+  height: 450px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  color: var(--accent-green);
+  text-shadow: 0 0 5px var(--accent-green);
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 255, 153, 0.05);
+}
+
+#terminal-input, #password {
+  background: transparent;
+  border: none;
+  color: var(--accent-green);
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  outline: none;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.prompt { color: var(--accent-purple); }
+
+/* CRT Scanline Effect */
+.terminal-body::before {
+  content: " ";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 2px 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.blink { animation: blink-animation 1s steps(5, start) infinite; }
+@keyframes blink-animation { to { visibility: hidden; } }
+
+/* --- GROUP CHAT SPECIFIC --- */
+.chat-page-bg {
+    background: #0d1117;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.chat-window {
+    width: 100%;
+    max-width: 600px;
+    background: #1a1d23;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.chat-header {
+    background: #21262d;
+    padding: 15px 20px;
+    border-bottom: 1px solid #30363d;
+    font-weight: bold;
+    color: #c9d1d9;
+    display: flex;
+    align-items: center;
+}
+
+.status-dot {
+    width: 10px; height: 10px;
+    background: #238636;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-body {
+    height: 500px;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.msg, .msg-alt {
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 85%;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.msg { background: #21262d; color: #c9d1d9; align-self: flex-start; }
+.msg-alt { background: #238636; color: white; align-self: flex-end; } /* Asa's messages */
+
+.sender {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+/* Character Colors */
+.lea { color: #ff69b4; }
+.asa { color: #58a6ff; }
+.cj { color: #8b949e; }
+.elijah { color: #f2e05d; }
+.shiloh { color: #7ee787; }
+.jay { color: #ffa657; }
+
+.arg-clue {
+    color: #ff7b72;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: help;
+}
+
+.chat-footer {
+    padding: 15px;
+    background: #21262d;
+}
+
+.chat-footer input {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 10px;
+    color: #8b949e;
+}
+
+.return-link-chat { margin-top: 20px; }
+.return-link-chat a { color: #58a6ff; text-decoration: none; font-size: 0.8rem; }

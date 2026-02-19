@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PROJECT_HELIOS // TOP_SECRET</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .helios-body { background: #000; color: #ff3333; font-family: 'Fira Code', monospace; padding: 40px; overflow-x: hidden; }
+    .warning-banner { border: 2px solid #ff3333; padding: 20px; text-align: center; margin-bottom: 40px; animation: flicker 0.1s infinite; }
+    
+    .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    .data-table td { border: 1px solid #330000; padding: 15px; vertical-align: top; }
+    
+    .redacted-block { background: #ff3333; color: #ff3333; transition: color 0.3s; cursor: crosshair; }
+    .redacted-block:hover { color: #000; } /* Hover to reveal secrets */
+
+    @keyframes flicker {
+      0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 0.9; }
+    }
+  </style>
+</head>
+<body class="helios-body">
+
+  <div class="warning-banner">
+    <h1>[!] UNAUTHORIZED ACCESS: LEVEL 5 CLEARANCE REQUIRED [!]</h1>
+    <p>PROPERTY OF THE HELIOS INITIATIVE (FORMERLY PROJECT ICARUS)</p>
+  </div>
+
+  <div class="iris-doc" style="background: #1a0000; border: 1px solid #ff3333; color: #ff9999;">
+    <h2>MISSION OBJECTIVE: THE ARTIFICIAL SUN</h2>
+    <p>Extraction of student-body elemental energy is currently at 64%. The device is designed to create a sustainable artificial sun to fuel global-scale weaponry.</p>
+    
+    <table class="data-table">
+      <tr>
+        <td><strong>EXTRACTION METHOD:</strong></td>
+        <td>Injection of <span class="redacted-block">Phase-II Nanites</span>. Nanites disintegrate specific DNA strands to convert biological power into raw thermal energy.</td>
+      </tr>
+      <tr>
+        <td><strong>SIDE EFFECTS:</strong></td>
+        <td>Nausea, acute headaches, <span class="redacted-block">malignant tumors</span>, and cellular collapse. Subject expiration usually occurs within T+72 hours.</td>
+      </tr>
+      <tr>
+        <td><strong>SUBJECT #STORM-001:</strong></td>
+        <td>Asa Mensah. Electrical output is currently "frying" the nanite sensors. Solution: Re-drug subject with <span class="redacted-block">Iris's Hypnosis</span> to keep him compliant during torture-extraction.</td>
+      </tr>
+    </table>
+
+    <p><strong>CURRENT STATUS:</strong> <span class="redacted-block">Lea Acquaye</span> is being used as a primary fuel source to stabilize the sun's core. If the Stormborn interferes, the gravitational mass will collapse, resulting in a localized exospheric breach (Estimated 100% mortality rate for Earth).</p>
+  </div>
+
+  <div style="text-align: center; margin-top: 50px;">
+    <a href="terminal.html" style="color: #ff3333;">&lt;&lt; DISCONNECT ENCRYPTED UPLINK</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Umbra Net - Hidden Lore</title>
+<link rel="stylesheet" href="styles.css">
+<!-- Link Fira Code font for the terminal aesthetic -->
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <h1 class="logo">Stormborn Academy</h1>
+    <ul class="nav-links">
+      <li><a href="Index.html">Home</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="powers.html">Powers</a></li>
+      <li><a href="terminal.html">Terminal</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="terminal-container">
+  <!-- Password Lock Screen -->
+  <div id="password-section" class="terminal-window">
+    <div class="terminal-header">UMBRA_NET SYSTEM_LOCK v4.1</div>
+    <div class="terminal-body">
+      <p class="blink">[!] SECURITY ALERT: UNAUTHORIZED ACCESS DETECTED</p>
+      <p>ESTABLISHING SECURE CONNECTION...</p>
+      <div class="input-line">
+        <span class="prompt">GUEST@UMBRA:~$</span>
+        <input type="password" id="password" placeholder="ENTER ACCESS_KEY..." autofocus>
+        <button onclick="checkPassword()">BYPASS</button>
+      </div>
+      <p id="error-message" style="color: #ff3333; margin-top: 10px;"></p>
+    </div>
+  </div>
+
+  <!-- The Actual Interactive Terminal -->
+  <div id="terminal-window" class="terminal-window" style="display:none;">
+    <div class="terminal-header">UMBRA_NET_TERMINAL // USER: ADMIN</div>
+    <div id="terminal-output" class="terminal-body">
+      <!-- Content will be injected here by JavaScript -->
+    </div>
+    <div class="input-line">
+      <span class="prompt">ADMIN@UMBRA:~$</span>
+      <!-- This hidden input captures all keystrokes -->
+      <input type="text" id="terminal-input" autofocus>
+      <span class="cursor"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Include the script for interactivity -->
+<script src="terminalScript.js"></script>
+
+</body>
+</html>
